@@ -1,0 +1,30 @@
+#include <cs50.h>
+#include <stdio.h>
+
+
+int main(void)
+{
+    string colors[5];
+    // this loop asks the user what will be in the array.
+    for (int i = 0; i < 5; i++)
+    {
+        colors[i] = get_string("what color do you want for number %i? ", i + 1);
+    }
+    // this loop prints each of the colors in the array.
+    for (int i = 0; i < 5; i++)
+    {
+        // this prints the position in the array and what color is stored at that location
+        printf("array position %i contains %s \n", i + 1, colors[i]);
+    }
+    // this do-while loop asks the user for a number that corralates to the order in the array
+    int color;
+    do
+    {
+        color = get_int("which number do you want to see again? ");
+    }
+    while (color < 1 || color > 5);
+        {
+            //this prints the color that is at the same position that the user wanted
+            printf("%s \n", colors[color - 1]);
+        }
+}
